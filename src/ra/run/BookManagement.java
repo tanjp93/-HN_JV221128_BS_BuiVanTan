@@ -40,14 +40,7 @@ public class BookManagement {
                     }
                     break;
                 case 3:
-                    Collections.sort(listBook, new SortByProfit() {
-                        @Override
-                        public int compare(Book o1, Book o2) {
-                            return o1.getInterest() < o2.getInterest() ? 1
-                                    : o1.getInterest() > o2.getInterest() ? -1
-                                    : 0;
-                        }
-                    });
+                   Collections.sort(listBook, Collections.reverseOrder());
                     break;
                 case 4:
                     System.out.println("Nhap Ma sach can xoa");

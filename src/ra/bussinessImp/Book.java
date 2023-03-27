@@ -4,7 +4,8 @@ import ra.bussiness.IBook;
 
 import java.util.Scanner;
 
-public class Book implements IBook {
+
+public class Book implements IBook, Comparable<Book> {
     private int bookId;
     private  String bookName;
     private  String title;
@@ -152,5 +153,10 @@ public class Book implements IBook {
                 ", interest=" + interest +
                 ", bookStatus=" + bookStatus +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return Float.compare(this.interest, o.getInterest());
     }
 }
