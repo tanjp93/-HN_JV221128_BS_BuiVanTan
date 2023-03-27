@@ -62,9 +62,36 @@ public class BookManagement {
                     }
                     break;
                 case 5:
-
+                    System.out.println("Nhap ten sach can tim kiem");
+                    String nameBook=sc.nextLine();
+                    boolean isExist = false;
+                    Book searchBook = new Book();
+                    for (Book book : listBook) {
+                        if (book.getBookName().equalsIgnoreCase(nameBook)) {
+                            isExist = true;
+                            searchBook = book;
+                            break;
+                        }
+                    }
+                    if (isExist) {
+                        searchBook.displayData();
+                        return;
+                    } else {
+                        System.out.println("Không tìm thấy sách! Vui lòng nhập lại!");
+                    }
                     break;
                 case 6:
+                    System.out.println("Nhập mã sách thay đổi trạng thái: ");
+                    int changeId = Integer.parseInt(sc.nextLine());
+                    Book selecBook = findBook(changeId, listBook);
+                    if (selecBook != null) {
+                        selecBook.setBookStatus(!selecBook.getBookStatus());
+                        System.out.println("Chuyển trạng thái thành công!");
+                        selecBook.displayData();
+                        return;
+                    } else {
+                        System.out.println("Không tìm thấy sách! Vui lòng nhập lại!");
+                    }
                     break;
                 case 7:
                     System.exit(0);
@@ -84,4 +111,5 @@ public class BookManagement {
         }
         return null;
     }
+
 }
