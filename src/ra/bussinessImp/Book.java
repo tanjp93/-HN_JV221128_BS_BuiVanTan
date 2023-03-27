@@ -97,8 +97,7 @@ public class Book implements IBook {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Nhập Book Id: ");
-        bookId = scanner.nextInt();
-        scanner.nextLine();
+        bookId = Integer.parseInt( scanner.nextLine());
 
         System.out.print("Nhập tên sách: ");
         bookName = scanner.nextLine();
@@ -107,16 +106,20 @@ public class Book implements IBook {
         title = scanner.nextLine();
 
         System.out.print("Nhập số trang sách: ");
-        numberOfPages = scanner.nextInt();
+        numberOfPages = Integer.parseInt( scanner.nextLine());
+
 
         System.out.print("Nhập giá nhập sách: ");
-        importPrice = scanner.nextFloat();
+        importPrice = Float.parseFloat(scanner.nextLine());
+
 
         System.out.print("Nhập giá bán sách: ");
-        exportPrice = scanner.nextFloat();
+        exportPrice = Float.parseFloat(scanner.nextLine());
+
 
         System.out.print("Nhập trạng thái sách: ");
         bookStatus = Boolean.parseBoolean(scanner.nextLine());
+
 
         interest = exportPrice - importPrice;
     }
