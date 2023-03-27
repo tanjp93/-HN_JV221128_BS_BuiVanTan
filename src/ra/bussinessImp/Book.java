@@ -115,6 +115,9 @@ public class Book implements IBook {
         System.out.print("Nhập giá bán sách: ");
         exportPrice = scanner.nextFloat();
 
+        System.out.print("Nhập trạng thái sách: ");
+        bookStatus = Boolean.parseBoolean(scanner.nextLine());
+
         interest = exportPrice - importPrice;
     }
 
